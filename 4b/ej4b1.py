@@ -44,21 +44,30 @@ Exemple:
 
 
 def squared_sum_ram(numbers_list):
-    # Store the list in RAM
-    # Write here your code
-    pass
+    if isinstance(numbers_list, list):
+        # Store the list in RAM
+        # Write here your code
+        squared_sum = 0
+        for num in numbers_list:
+            squared_sum += num ** 2
+        return squared_sum
+    else:
+        raise ValueError("Input must be a list of integers.")
 
 
 def squared_sum_heap(numbers_list):
-    # Store the list in Heap
-    # You should correct and overwrite something in the following line.
-    squared_sum_list = [num**1 for num in numbers_list]
-    heap_sum = sum(squared_sum_list)
-    return heap_sum
+   if isinstance(numbers_list, list):
+       # Store the list in Heap
+       # You should correct and overwrite something in the following line.
+       squared_sum_list = [num**2 for num in numbers_list]
+       heap_sum = sum(squared_sum_list)
+       return heap_sum
+   else:
+       raise ValueError("Input must be a list of integers.")
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # # Si vols provar el teu codi, descomenta les línies següents i executa l'script
-# numbers_list = [6, 4, 7]
-# print(squared_sum_ram(numbers_list))
-# print(squared_sum_heap(numbers_list))
+numbers_list = [6, 4, 7]
+print(squared_sum_ram(numbers_list))
+print(squared_sum_heap(numbers_list))
