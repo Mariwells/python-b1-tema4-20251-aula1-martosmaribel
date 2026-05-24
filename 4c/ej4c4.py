@@ -55,30 +55,38 @@ Exemple:
          "Polly"        
 """
 # Write abstract class Animal here
+from abc import ABC, abstractmethod
 
-# Corret and overwrite class Dog(Animal) here 
-class Dog():
+class Animal(ABC):
     def __init__(self, name):
         self.name = name
 
+    @abstractmethod
     def talk(self):
         pass
+# Corret and overwrite class Dog(Animal) here 
+class Dog(Animal):
+    def __init__(self, name):
+        super().__init__(name)          
+
+    def talk(self):
+        return "¡Guau!"
 
 # Corret and overwrite class Cat(Animal) here 
-class Cat():
+class Cat(Animal):
     def __init__(self, name):
-        self.name = name
+        super().__init__(name)
+
     def talk(self):
-        pass
+        return "¡Meow!"         
 
 # Corret and overwrite class Parrot(Animal) here 
-class Parrot():
+class Parrot(Animal):
     def __init__(self, name):
-        self.name = name
+        super().__init__(name)
+
     def talk(self):
-        pass
-
-
+        return "¡Whistle!"          
 
 
 
@@ -90,4 +98,4 @@ def test_code():
 	for animal in animals:
 	    print(f"{animal.name} dice {animal.talk()}")
 
-#test_code()
+test_code()
