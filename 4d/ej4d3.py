@@ -52,10 +52,17 @@ Exemple:
 """
 
 def read_and_write():
-    # Write here your code
-    pass
+    nombre = input("Insert your name: ")
+    edad = int(input("Insert your age: "))
+
+    with open("file.txt", "w") as f:
+        f.write(f"{nombre}\n")
+        f.write(f"{edad}\n")
+
+    with open("file.txt", "r") as f:
+        print(f.read().strip())
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
-# read_and_write()
+read_and_write()
