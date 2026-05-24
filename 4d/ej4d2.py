@@ -37,11 +37,18 @@ Exemple:
 
 """
 def create_read_file():
-    # Write here your code
-    pass
+    with open("text_file.txt", "w") as f:
+        f.write("Juan\n")
+        f.write("Perez\n")
+        f.write("30\n")
+
+    f = open("text_file.txt", "r")
+    for line in f:
+        print(line.strip())
+    f.close()   
 
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
-# create_read_file()
+create_read_file()
